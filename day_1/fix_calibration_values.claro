@@ -3,6 +3,23 @@ var input_file = resources::inputFile;
 var input_text = files::readOrPanic(input_file);
 var input_text_lines = strings::split(input_text, "\n");
 
+var STRING_TO_NUMBER: {string: string} =  {
+    "one": "1",
+    "two": "2",
+    "three": "3",
+    "four": "4",
+    "five": "5",
+    "six": "6",
+    "seven": "7",
+    "eight": "8",
+    "nine": "9"
+};
+
+#TODO this is wonderful programming and definitely not bad
+#var STRING_TO_NUMBER_KEYS = maps::keySet(STRING_TO_NUMBER);
+var STRING_TO_NUMBER_KEYS = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+
+
 function get_first_number(input_line: string) -> oneof<int, std::Error<string>> {
 
     for (elmt in strings::split(input_line, "")) {
@@ -31,50 +48,72 @@ function get_last_number(input_line: string) -> oneof<int, std::Error<string>> {
 
 }
 
-function get_calibration_sum(input_text_lines: [string]) -> int {
-    var calibration_sum = 0;
-    for (line in input_text_lines) {
+function pre_process_string(input_text: string, STRING_TO_NUMBER: {string: string}, STRING_TO_NUMBER_KEYS: {string}) -> string {
+    var processed_string = "";
+    var string_to_number_replacement: boolean;
+    var index = 0;
 
-        var first_number = get_first_number(line);
-        var last_number = get_last_number(line);
+    while (index < len(input_text)) {
+        string_to_number_replacement = false;
+        for (key in STRING_TO_NUMBER_KEYS) {
+            
+            if (strings::startsWithFromIndex(input_text, key, index)){
+ 
+                if (((index + len(key)) <= len(input_text)) 
+                        and (key==strings::substring(input_text, index, index + len(key))) ) {
+                    #if we can replace a string with a number, then do it
+                    processed_string = strings::join("", [processed_string, STRING_TO_NUMBER[key]]);
+                    index = index + len(key);
+                    string_to_number_replacement = true;
+                }
+            }
+        }
+
+        if (string_to_number_replacement==false) {
+            processed_string = strings::join("", [processed_string, input_text[index]]);
+            index ++;
+        }
+        
+    }
+
+    return processed_string;
+}   
+
+function get_calibration_sum(input_text_lines: [string],
+                                STRING_TO_NUMBER: {string: string}, 
+                                STRING_TO_NUMBER_KEYS: {string}, 
+                                process_string: boolean
+                            ) -> int {
+    var calibration_sum = 0;
+    var line_str = "";
+    for (line in input_text_lines) {
+        if (process_string) {
+            line_str = pre_process_string(line, STRING_TO_NUMBER, STRING_TO_NUMBER_KEYS);
+        }
+        else {
+            line_str = line;
+        }
+        var first_number = get_first_number(line_str);
+        var last_number = get_last_number(line_str);
 
         if ((first_number instanceof int) and (last_number instanceof int)) {
             calibration_sum = calibration_sum + (10 * first_number) + last_number;
         }
+    
+        print(strings::join(" -> ", [line, line_str]));
     }
     return calibration_sum;
 }
 
-#function pre_process_string(input_text: string) -> string {
-#
-#    for 
-#
-#}
+print("Calibration without pre-processing");
+print(get_calibration_sum(input_text_lines, STRING_TO_NUMBER, STRING_TO_NUMBER_KEYS, false));
+print("---------------------------\n");
+print("Calibration with pre-processing");
+print(get_calibration_sum(input_text_lines, STRING_TO_NUMBER, STRING_TO_NUMBER_KEYS, true));
 
-var STRING_TO_NUMBER: {string: string} =  {
-    "one": "1",
-    "two": "2",
-    "three": "3",
-    "four": "4",
-    "five": "5",
-    "six": "6",
-    "seven": "7",
-    "eight": "8",
-    "nine": "9"
-};
 
-var STRING_TO_NUMBER_KEYS= maps::keySet(STRING_TO_NUMBER);
-print(STRING_TO_NUMBER_KEYS);
-print(STRING_TO_NUMBER["one"]);
-print(get_calibration_sum(input_text_lines));
 
-#for (key in STRING_TO_NUMBER_KEYS) {
 
-#    print(key);
-
-#}
-
-print(strings::replaceAll("one3one", "one", STRING_TO_NUMBER["one"]));
 
 
 
