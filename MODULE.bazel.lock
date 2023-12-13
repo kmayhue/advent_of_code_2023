@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "11344befeeae8e76d4f0e6d0d19474973d2a5702938c1d8236d336247172e404",
+  "moduleFileHash": "9283c916bcfcfa6baff4494e1f4e2ce12d20cf5978537458c7a2f2704c4b62f6",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -17,23 +17,23 @@
   },
   "moduleDepGraph": {
     "<root>": {
-      "name": "example-claro-module",
+      "name": "advent_of_code_2023_km",
       "version": "1.0.0",
       "key": "<root>",
-      "repoName": "example-claro-module",
+      "repoName": "advent_of_code_2023_km",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [],
       "extensionUsages": [],
       "deps": {
-        "claro-lang": "claro-lang@0.1.368",
+        "claro-lang": "claro-lang@0.1.409",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
       }
     },
-    "claro-lang@0.1.368": {
+    "claro-lang@0.1.409": {
       "name": "claro-lang",
-      "version": "0.1.368",
-      "key": "claro-lang@0.1.368",
+      "version": "0.1.409",
+      "key": "claro-lang@0.1.409",
       "repoName": "claro-lang",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [],
@@ -41,10 +41,10 @@
         {
           "extensionBzlFile": ":maven_extension.bzl",
           "extensionName": "maven",
-          "usingModule": "claro-lang@0.1.368",
+          "usingModule": "claro-lang@0.1.409",
           "location": {
-            "file": "https://bcr.bazel.build/modules/claro-lang/0.1.368/MODULE.bazel",
-            "line": 18,
+            "file": "https://bcr.bazel.build/modules/claro-lang/0.1.409/MODULE.bazel",
+            "line": 19,
             "column": 22
           },
           "imports": {
@@ -86,8 +86,8 @@
               },
               "devDependency": false,
               "location": {
-                "file": "https://bcr.bazel.build/modules/claro-lang/0.1.368/MODULE.bazel",
-                "line": 19,
+                "file": "https://bcr.bazel.build/modules/claro-lang/0.1.409/MODULE.bazel",
+                "line": 20,
                 "column": 14
               }
             }
@@ -98,10 +98,10 @@
         {
           "extensionBzlFile": "@claro-lang//:non_module_deps.bzl",
           "extensionName": "non_module_deps",
-          "usingModule": "claro-lang@0.1.368",
+          "usingModule": "claro-lang@0.1.409",
           "location": {
-            "file": "https://bcr.bazel.build/modules/claro-lang/0.1.368/MODULE.bazel",
-            "line": 75,
+            "file": "https://bcr.bazel.build/modules/claro-lang/0.1.409/MODULE.bazel",
+            "line": 76,
             "column": 32
           },
           "imports": {
@@ -115,6 +115,7 @@
         }
       ],
       "deps": {
+        "aspect_bazel_lib": "aspect_bazel_lib@2.0.1",
         "bazel_skylib": "bazel_skylib@1.4.2",
         "rules_proto": "rules_proto@5.3.0-21.7",
         "rules_jvm_external": "rules_jvm_external@5.3",
@@ -125,11 +126,11 @@
         "bzlFile": "@bazel_tools//tools/build_defs/repo:http.bzl",
         "ruleClassName": "http_archive",
         "attributes": {
-          "name": "claro-lang~0.1.368",
+          "name": "claro-lang~0.1.409",
           "urls": [
-            "https://github.com/JasonSteving99/claro-lang/releases/download/v0.1.368/claro-source-archive-v0.1.368.zip"
+            "https://github.com/JasonSteving99/claro-lang/releases/download/v0.1.409/claro-source-archive-v0.1.409.zip"
           ],
-          "integrity": "sha256-EN6YwB/SilRDzz3yYRLjr97dmlheO5WNAEfvtKg7Lws=",
+          "integrity": "sha256-h/rhNXwW5LNHG6N+yYdcnxd5hCP7G4UMMURfFdEREE0=",
           "strip_prefix": "",
           "remote_patches": {},
           "remote_patch_strip": 0
@@ -283,6 +284,145 @@
         "bazel_tools": "bazel_tools@_"
       }
     },
+    "aspect_bazel_lib@2.0.1": {
+      "name": "aspect_bazel_lib",
+      "version": "2.0.1",
+      "key": "aspect_bazel_lib@2.0.1",
+      "repoName": "aspect_bazel_lib",
+      "executionPlatformsToRegister": [],
+      "toolchainsToRegister": [
+        "@copy_directory_toolchains//:all",
+        "@copy_to_directory_toolchains//:all",
+        "@jq_toolchains//:all",
+        "@yq_toolchains//:all",
+        "@coreutils_toolchains//:all",
+        "@expand_template_toolchains//:all",
+        "@bsd_tar_toolchains//:linux_amd64_toolchain",
+        "@bsd_tar_toolchains//:linux_arm64_toolchain",
+        "@bsd_tar_toolchains//:windows_amd64_toolchain",
+        "@bsd_tar_toolchains//:host_toolchain"
+      ],
+      "extensionUsages": [
+        {
+          "extensionBzlFile": "@aspect_bazel_lib//lib:extensions.bzl",
+          "extensionName": "toolchains",
+          "usingModule": "aspect_bazel_lib@2.0.1",
+          "location": {
+            "file": "https://bcr.bazel.build/modules/aspect_bazel_lib/2.0.1/MODULE.bazel",
+            "line": 17,
+            "column": 37
+          },
+          "imports": {
+            "bsd_tar_toolchains": "bsd_tar_toolchains",
+            "copy_directory_toolchains": "copy_directory_toolchains",
+            "copy_to_directory_toolchains": "copy_to_directory_toolchains",
+            "coreutils_toolchains": "coreutils_toolchains",
+            "expand_template_toolchains": "expand_template_toolchains",
+            "jq_toolchains": "jq_toolchains",
+            "yq_toolchains": "yq_toolchains"
+          },
+          "devImports": [],
+          "tags": [
+            {
+              "tagName": "copy_directory",
+              "attributeValues": {},
+              "devDependency": false,
+              "location": {
+                "file": "https://bcr.bazel.build/modules/aspect_bazel_lib/2.0.1/MODULE.bazel",
+                "line": 18,
+                "column": 36
+              }
+            },
+            {
+              "tagName": "copy_to_directory",
+              "attributeValues": {},
+              "devDependency": false,
+              "location": {
+                "file": "https://bcr.bazel.build/modules/aspect_bazel_lib/2.0.1/MODULE.bazel",
+                "line": 19,
+                "column": 39
+              }
+            },
+            {
+              "tagName": "jq",
+              "attributeValues": {},
+              "devDependency": false,
+              "location": {
+                "file": "https://bcr.bazel.build/modules/aspect_bazel_lib/2.0.1/MODULE.bazel",
+                "line": 20,
+                "column": 24
+              }
+            },
+            {
+              "tagName": "yq",
+              "attributeValues": {},
+              "devDependency": false,
+              "location": {
+                "file": "https://bcr.bazel.build/modules/aspect_bazel_lib/2.0.1/MODULE.bazel",
+                "line": 21,
+                "column": 24
+              }
+            },
+            {
+              "tagName": "coreutils",
+              "attributeValues": {},
+              "devDependency": false,
+              "location": {
+                "file": "https://bcr.bazel.build/modules/aspect_bazel_lib/2.0.1/MODULE.bazel",
+                "line": 22,
+                "column": 31
+              }
+            },
+            {
+              "tagName": "tar",
+              "attributeValues": {},
+              "devDependency": false,
+              "location": {
+                "file": "https://bcr.bazel.build/modules/aspect_bazel_lib/2.0.1/MODULE.bazel",
+                "line": 23,
+                "column": 25
+              }
+            },
+            {
+              "tagName": "expand_template",
+              "attributeValues": {},
+              "devDependency": false,
+              "location": {
+                "file": "https://bcr.bazel.build/modules/aspect_bazel_lib/2.0.1/MODULE.bazel",
+                "line": 24,
+                "column": 37
+              }
+            }
+          ],
+          "hasDevUseExtension": false,
+          "hasNonDevUseExtension": true
+        }
+      ],
+      "deps": {
+        "bazel_skylib": "bazel_skylib@1.4.2",
+        "platforms": "platforms@0.0.7",
+        "io_bazel_stardoc": "stardoc@0.5.4",
+        "bazel_tools": "bazel_tools@_",
+        "local_config_platform": "local_config_platform@_"
+      },
+      "repoSpec": {
+        "bzlFile": "@bazel_tools//tools/build_defs/repo:http.bzl",
+        "ruleClassName": "http_archive",
+        "attributes": {
+          "name": "aspect_bazel_lib~2.0.1",
+          "urls": [
+            "https://github.com/aspect-build/bazel-lib/releases/download/v2.0.1/bazel-lib-v2.0.1.tar.gz"
+          ],
+          "integrity": "sha256-SzLPb+qzi4h5QdsCICDupaSbhI4R49bU0YQzWUlRcXo=",
+          "strip_prefix": "bazel-lib-2.0.1",
+          "remote_patches": {
+            "https://bcr.bazel.build/modules/aspect_bazel_lib/2.0.1/patches/go_dev_dep.patch": "sha256-KgABwDzOT+DugUHn9tHLOz05osnk2FLsS10d5zqG/M0=",
+            "https://bcr.bazel.build/modules/aspect_bazel_lib/2.0.1/patches/module_dot_bazel_version.patch": "sha256-njJSAswqoIcVFr+3OhTvhkiMKUU/t5uyTGfqp4ZwhDs="
+          },
+          "remote_patch_strip": 1
+        }
+      }
+    },
     "bazel_skylib@1.4.2": {
       "name": "bazel_skylib",
       "version": "1.4.2",
@@ -414,7 +554,7 @@
       ],
       "deps": {
         "bazel_skylib": "bazel_skylib@1.4.2",
-        "io_bazel_stardoc": "stardoc@0.5.3",
+        "io_bazel_stardoc": "stardoc@0.5.4",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
       },
@@ -863,10 +1003,10 @@
         }
       }
     },
-    "stardoc@0.5.3": {
+    "stardoc@0.5.4": {
       "name": "stardoc",
-      "version": "0.5.3",
-      "key": "stardoc@0.5.3",
+      "version": "0.5.4",
+      "key": "stardoc@0.5.4",
       "repoName": "stardoc",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [],
@@ -874,6 +1014,7 @@
       "deps": {
         "bazel_skylib": "bazel_skylib@1.4.2",
         "rules_java": "rules_java@7.1.0",
+        "rules_license": "rules_license@0.0.7",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
       },
@@ -881,15 +1022,13 @@
         "bzlFile": "@bazel_tools//tools/build_defs/repo:http.bzl",
         "ruleClassName": "http_archive",
         "attributes": {
-          "name": "stardoc~0.5.3",
+          "name": "stardoc~0.5.4",
           "urls": [
-            "https://github.com/bazelbuild/stardoc/releases/download/0.5.3/stardoc-0.5.3.tar.gz"
+            "https://github.com/bazelbuild/stardoc/releases/download/0.5.4/stardoc-0.5.4.tar.gz"
           ],
-          "integrity": "sha256-P9j+xN3sPGcL2BCQTi4zFwvt/hL5Ct+UNQgYS+RYyLs=",
+          "integrity": "sha256-7FcTnkZvquVj8vw5YJ2klIpHm7UbbWeu3X2bG4BZxDM=",
           "strip_prefix": "",
-          "remote_patches": {
-            "https://bcr.bazel.build/modules/stardoc/0.5.3/patches/module_dot_bazel.patch": "sha256-Lgpy9OCr0zBWYuHoyM1rJJrgxn23X/bwgICEF7XiEug="
-          },
+          "remote_patches": {},
           "remote_patch_strip": 0
         }
       }
@@ -1048,6 +1187,414 @@
         }
       }
     },
+    "@@aspect_bazel_lib~2.0.1//lib:extensions.bzl%toolchains": {
+      "general": {
+        "bzlTransitiveDigest": "Z13TCwLqiOZrVdjfeVDMlSTqm7uqVLWqeyqG77Cun5k=",
+        "accumulatedFileDigests": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "bsd_tar_windows_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:tar_toolchain.bzl",
+            "ruleClassName": "bsdtar_binary_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~bsd_tar_windows_amd64",
+              "platform": "windows_amd64"
+            }
+          },
+          "expand_template_windows_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:expand_template_toolchain.bzl",
+            "ruleClassName": "expand_template_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~expand_template_windows_amd64",
+              "platform": "windows_amd64"
+            }
+          },
+          "copy_to_directory_windows_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:copy_to_directory_toolchain.bzl",
+            "ruleClassName": "copy_to_directory_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~copy_to_directory_windows_amd64",
+              "platform": "windows_amd64"
+            }
+          },
+          "bsd_tar_host": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:tar_toolchain.bzl",
+            "ruleClassName": "bsdtar_binary_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~bsd_tar_host",
+              "platform": "host"
+            }
+          },
+          "jq": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:jq_toolchain.bzl",
+            "ruleClassName": "jq_host_alias_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~jq"
+            }
+          },
+          "jq_darwin_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:jq_toolchain.bzl",
+            "ruleClassName": "jq_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~jq_darwin_amd64",
+              "platform": "darwin_amd64",
+              "version": "1.7"
+            }
+          },
+          "expand_template_darwin_arm64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:expand_template_toolchain.bzl",
+            "ruleClassName": "expand_template_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~expand_template_darwin_arm64",
+              "platform": "darwin_arm64"
+            }
+          },
+          "copy_to_directory_freebsd_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:copy_to_directory_toolchain.bzl",
+            "ruleClassName": "copy_to_directory_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~copy_to_directory_freebsd_amd64",
+              "platform": "freebsd_amd64"
+            }
+          },
+          "expand_template_linux_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:expand_template_toolchain.bzl",
+            "ruleClassName": "expand_template_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~expand_template_linux_amd64",
+              "platform": "linux_amd64"
+            }
+          },
+          "copy_to_directory_linux_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:copy_to_directory_toolchain.bzl",
+            "ruleClassName": "copy_to_directory_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~copy_to_directory_linux_amd64",
+              "platform": "linux_amd64"
+            }
+          },
+          "jq_linux_arm64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:jq_toolchain.bzl",
+            "ruleClassName": "jq_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~jq_linux_arm64",
+              "platform": "linux_arm64",
+              "version": "1.7"
+            }
+          },
+          "coreutils_darwin_arm64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:coreutils_toolchain.bzl",
+            "ruleClassName": "coreutils_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~coreutils_darwin_arm64",
+              "platform": "darwin_arm64",
+              "version": "0.0.23"
+            }
+          },
+          "coreutils_linux_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:coreutils_toolchain.bzl",
+            "ruleClassName": "coreutils_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~coreutils_linux_amd64",
+              "platform": "linux_amd64",
+              "version": "0.0.23"
+            }
+          },
+          "copy_directory_toolchains": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:copy_directory_toolchain.bzl",
+            "ruleClassName": "copy_directory_toolchains_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~copy_directory_toolchains",
+              "user_repository_name": "copy_directory"
+            }
+          },
+          "copy_to_directory_linux_arm64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:copy_to_directory_toolchain.bzl",
+            "ruleClassName": "copy_to_directory_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~copy_to_directory_linux_arm64",
+              "platform": "linux_arm64"
+            }
+          },
+          "yq_linux_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:yq_toolchain.bzl",
+            "ruleClassName": "yq_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~yq_linux_amd64",
+              "platform": "linux_amd64",
+              "version": "4.25.2"
+            }
+          },
+          "bsd_tar_linux_arm64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:tar_toolchain.bzl",
+            "ruleClassName": "bsdtar_binary_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~bsd_tar_linux_arm64",
+              "platform": "linux_arm64"
+            }
+          },
+          "copy_to_directory_darwin_arm64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:copy_to_directory_toolchain.bzl",
+            "ruleClassName": "copy_to_directory_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~copy_to_directory_darwin_arm64",
+              "platform": "darwin_arm64"
+            }
+          },
+          "copy_directory_darwin_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:copy_directory_toolchain.bzl",
+            "ruleClassName": "copy_directory_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~copy_directory_darwin_amd64",
+              "platform": "darwin_amd64"
+            }
+          },
+          "coreutils_darwin_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:coreutils_toolchain.bzl",
+            "ruleClassName": "coreutils_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~coreutils_darwin_amd64",
+              "platform": "darwin_amd64",
+              "version": "0.0.23"
+            }
+          },
+          "coreutils_linux_arm64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:coreutils_toolchain.bzl",
+            "ruleClassName": "coreutils_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~coreutils_linux_arm64",
+              "platform": "linux_arm64",
+              "version": "0.0.23"
+            }
+          },
+          "coreutils_toolchains": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:coreutils_toolchain.bzl",
+            "ruleClassName": "coreutils_toolchains_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~coreutils_toolchains",
+              "user_repository_name": "coreutils"
+            }
+          },
+          "copy_directory_freebsd_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:copy_directory_toolchain.bzl",
+            "ruleClassName": "copy_directory_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~copy_directory_freebsd_amd64",
+              "platform": "freebsd_amd64"
+            }
+          },
+          "yq_linux_s390x": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:yq_toolchain.bzl",
+            "ruleClassName": "yq_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~yq_linux_s390x",
+              "platform": "linux_s390x",
+              "version": "4.25.2"
+            }
+          },
+          "yq": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:yq_toolchain.bzl",
+            "ruleClassName": "yq_host_alias_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~yq"
+            }
+          },
+          "expand_template_darwin_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:expand_template_toolchain.bzl",
+            "ruleClassName": "expand_template_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~expand_template_darwin_amd64",
+              "platform": "darwin_amd64"
+            }
+          },
+          "copy_directory_linux_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:copy_directory_toolchain.bzl",
+            "ruleClassName": "copy_directory_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~copy_directory_linux_amd64",
+              "platform": "linux_amd64"
+            }
+          },
+          "jq_darwin_arm64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:jq_toolchain.bzl",
+            "ruleClassName": "jq_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~jq_darwin_arm64",
+              "platform": "darwin_arm64",
+              "version": "1.7"
+            }
+          },
+          "yq_darwin_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:yq_toolchain.bzl",
+            "ruleClassName": "yq_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~yq_darwin_amd64",
+              "platform": "darwin_amd64",
+              "version": "4.25.2"
+            }
+          },
+          "copy_directory_linux_arm64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:copy_directory_toolchain.bzl",
+            "ruleClassName": "copy_directory_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~copy_directory_linux_arm64",
+              "platform": "linux_arm64"
+            }
+          },
+          "expand_template_linux_arm64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:expand_template_toolchain.bzl",
+            "ruleClassName": "expand_template_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~expand_template_linux_arm64",
+              "platform": "linux_arm64"
+            }
+          },
+          "jq_linux_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:jq_toolchain.bzl",
+            "ruleClassName": "jq_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~jq_linux_amd64",
+              "platform": "linux_amd64",
+              "version": "1.7"
+            }
+          },
+          "expand_template_toolchains": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:expand_template_toolchain.bzl",
+            "ruleClassName": "expand_template_toolchains_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~expand_template_toolchains",
+              "user_repository_name": "expand_template"
+            }
+          },
+          "bsd_tar_toolchains": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:tar_toolchain.bzl",
+            "ruleClassName": "tar_toolchains_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~bsd_tar_toolchains",
+              "user_repository_name": "bsd_tar"
+            }
+          },
+          "yq_windows_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:yq_toolchain.bzl",
+            "ruleClassName": "yq_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~yq_windows_amd64",
+              "platform": "windows_amd64",
+              "version": "4.25.2"
+            }
+          },
+          "copy_to_directory_darwin_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:copy_to_directory_toolchain.bzl",
+            "ruleClassName": "copy_to_directory_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~copy_to_directory_darwin_amd64",
+              "platform": "darwin_amd64"
+            }
+          },
+          "jq_windows_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:jq_toolchain.bzl",
+            "ruleClassName": "jq_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~jq_windows_amd64",
+              "platform": "windows_amd64",
+              "version": "1.7"
+            }
+          },
+          "expand_template_freebsd_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:expand_template_toolchain.bzl",
+            "ruleClassName": "expand_template_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~expand_template_freebsd_amd64",
+              "platform": "freebsd_amd64"
+            }
+          },
+          "yq_linux_ppc64le": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:yq_toolchain.bzl",
+            "ruleClassName": "yq_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~yq_linux_ppc64le",
+              "platform": "linux_ppc64le",
+              "version": "4.25.2"
+            }
+          },
+          "bsd_tar_linux_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:tar_toolchain.bzl",
+            "ruleClassName": "bsdtar_binary_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~bsd_tar_linux_amd64",
+              "platform": "linux_amd64"
+            }
+          },
+          "copy_to_directory_toolchains": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:copy_to_directory_toolchain.bzl",
+            "ruleClassName": "copy_to_directory_toolchains_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~copy_to_directory_toolchains",
+              "user_repository_name": "copy_to_directory"
+            }
+          },
+          "jq_toolchains": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:jq_toolchain.bzl",
+            "ruleClassName": "jq_toolchains_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~jq_toolchains",
+              "user_repository_name": "jq"
+            }
+          },
+          "copy_directory_darwin_arm64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:copy_directory_toolchain.bzl",
+            "ruleClassName": "copy_directory_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~copy_directory_darwin_arm64",
+              "platform": "darwin_arm64"
+            }
+          },
+          "copy_directory_windows_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:copy_directory_toolchain.bzl",
+            "ruleClassName": "copy_directory_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~copy_directory_windows_amd64",
+              "platform": "windows_amd64"
+            }
+          },
+          "yq_darwin_arm64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:yq_toolchain.bzl",
+            "ruleClassName": "yq_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~yq_darwin_arm64",
+              "platform": "darwin_arm64",
+              "version": "4.25.2"
+            }
+          },
+          "yq_toolchains": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:yq_toolchain.bzl",
+            "ruleClassName": "yq_toolchains_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~yq_toolchains",
+              "user_repository_name": "yq"
+            }
+          },
+          "coreutils_windows_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:coreutils_toolchain.bzl",
+            "ruleClassName": "coreutils_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~coreutils_windows_amd64",
+              "platform": "windows_amd64",
+              "version": "0.0.23"
+            }
+          },
+          "yq_linux_arm64": {
+            "bzlFile": "@@aspect_bazel_lib~2.0.1//lib/private:yq_toolchain.bzl",
+            "ruleClassName": "yq_platform_repo",
+            "attributes": {
+              "name": "aspect_bazel_lib~2.0.1~toolchains~yq_linux_arm64",
+              "platform": "linux_arm64",
+              "version": "4.25.2"
+            }
+          }
+        }
+      }
+    },
     "@@bazel_tools//tools/cpp:cc_configure.bzl%cc_configure_extension": {
       "general": {
         "bzlTransitiveDigest": "O9sf6ilKWU9Veed02jG9o2HM/xgV/UAyciuFBuxrFRY=",
@@ -1105,11 +1652,11 @@
         }
       }
     },
-    "@@claro-lang~0.1.368//:maven_extension.bzl%maven": {
+    "@@claro-lang~0.1.409//:maven_extension.bzl%maven": {
       "general": {
         "bzlTransitiveDigest": "KzuvosNJMRe9cdTnGtq8L5/umDbri7OgXvB/kcH16vE=",
         "accumulatedFileDigests": {
-          "@@claro-lang~0.1.368//:rules_jvm_external~5.3~maven~maven_install.json": "fafd5e33acb02e5a1df1ee8b7ce648fb101a70ab41c76460763f7eb302d7c09f"
+          "@@claro-lang~0.1.409//:rules_jvm_external~5.3~maven~maven_install.json": "fafd5e33acb02e5a1df1ee8b7ce648fb101a70ab41c76460763f7eb302d7c09f"
         },
         "envVariables": {},
         "generatedRepoSpecs": {
@@ -1117,7 +1664,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_promise_jar_sources_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_promise_jar_sources_5_4_3",
               "sha256": "de0c9c8c7086bff4d927d9bb890766faa8741c9f4f8fb38ea7aaab21c3621fe0",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-promise/5.4.3/activej-promise-5.4.3-sources.jar",
@@ -1131,7 +1678,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_guava_guava_32_1_2_jre",
+              "name": "claro-lang~0.1.409~maven~com_google_guava_guava_32_1_2_jre",
               "sha256": "bc65dea7cfd9e4dacf8419d8af0e741655857d27885bb35d943d7187fc3a8fce",
               "urls": [
                 "https://jcenter.bintray.com/com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar",
@@ -1145,7 +1692,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_eventloop_jar_sources_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_eventloop_jar_sources_5_4_3",
               "sha256": "9506f16f5e5f53d5ce35a3b1017d58a53f8dd51278105fbd46b71d08e480fa98",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-eventloop/5.4.3/activej-eventloop-5.4.3-sources.jar",
@@ -1159,7 +1706,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_guava_failureaccess_1_0_1",
+              "name": "claro-lang~0.1.409~maven~com_google_guava_failureaccess_1_0_1",
               "sha256": "a171ee4c734dd2da837e4b16be9df4661afab72a41adaf31eb84dfdaf936ca26",
               "urls": [
                 "https://jcenter.bintray.com/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar",
@@ -1173,7 +1720,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~net_javacrumbs_future_converter_future_converter_java8_guava_1_2_0",
+              "name": "claro-lang~0.1.409~maven~net_javacrumbs_future_converter_future_converter_java8_guava_1_2_0",
               "sha256": "3b47ae8e2b2bfad810586c37537f002273c05237bd3adecafe9f9f57a2b18fde",
               "urls": [
                 "https://jcenter.bintray.com/net/javacrumbs/future-converter/future-converter-java8-guava/1.2.0/future-converter-java8-guava-1.2.0.jar",
@@ -1187,7 +1734,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_net_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_net_5_4_3",
               "sha256": "531823aa9a07b920d8db701969faa5b9b3c42cd89f6609b74cbf5cc4eee4141c",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-net/5.4.3/activej-net-5.4.3.jar",
@@ -1201,7 +1748,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_jetbrains_kotlin_kotlin_stdlib_common_1_6_20",
+              "name": "claro-lang~0.1.409~maven~org_jetbrains_kotlin_kotlin_stdlib_common_1_6_20",
               "sha256": "8da40a2520d30dcb1012176fe93d24e82d08a3e346c37e0343b0fb6f64f6be01",
               "urls": [
                 "https://jcenter.bintray.com/org/jetbrains/kotlin/kotlin-stdlib-common/1.6.20/kotlin-stdlib-common-1.6.20.jar",
@@ -1215,7 +1762,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_github_vbmacher_java_cup_jar_sources_11b_20160615",
+              "name": "claro-lang~0.1.409~maven~com_github_vbmacher_java_cup_jar_sources_11b_20160615",
               "sha256": "1fa0c0fbe7a0c4af9a3545775a1613ea43a7adc419156c617ab6a7a47fcbf029",
               "urls": [
                 "https://jcenter.bintray.com/com/github/vbmacher/java-cup/11b-20160615/java-cup-11b-20160615-sources.jar",
@@ -1229,7 +1776,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_6_20",
+              "name": "claro-lang~0.1.409~maven~org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_6_20",
               "sha256": "aa2fa2e81355c4d98dd97da2169bf401f842261378f5b1cbea1aa11855d67620",
               "urls": [
                 "https://jcenter.bintray.com/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.6.20/kotlin-stdlib-jdk7-1.6.20.jar",
@@ -1243,7 +1790,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_auto_value_auto_value_1_5_3",
+              "name": "claro-lang~0.1.409~maven~com_google_auto_value_auto_value_1_5_3",
               "sha256": "238d3b7535096d782d08576d1e42f79480713ff0794f511ff2cc147363ec072d",
               "urls": [
                 "https://jcenter.bintray.com/com/google/auto/value/auto-value/1.5.3/auto-value-1.5.3.jar",
@@ -1257,7 +1804,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_code_gson_gson_jar_sources_2_10_1",
+              "name": "claro-lang~0.1.409~maven~com_google_code_gson_gson_jar_sources_2_10_1",
               "sha256": "eee1cc5c1f4267ee194cc245777e68084738ef390acd763354ce0ff6bfb7bcc1",
               "urls": [
                 "https://jcenter.bintray.com/com/google/code/gson/gson/2.10.1/gson-2.10.1-sources.jar",
@@ -1271,7 +1818,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_apache_ant_ant_launcher_jar_sources_1_10_13",
+              "name": "claro-lang~0.1.409~maven~org_apache_ant_ant_launcher_jar_sources_1_10_13",
               "sha256": "cfad031a6576db40fb864b4ab49190a418b9b29941e911a38b98d5c491613ca3",
               "urls": [
                 "https://jcenter.bintray.com/org/apache/ant/ant-launcher/1.10.13/ant-launcher-1.10.13-sources.jar",
@@ -1285,7 +1832,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_googlecode_lanterna_lanterna_jar_sources_3_1_1",
+              "name": "claro-lang~0.1.409~maven~com_googlecode_lanterna_lanterna_jar_sources_3_1_1",
               "sha256": "dd065492727a41ff00b83b600ca488d931afd10c6acec7c886ca6d7538736d33",
               "urls": [
                 "https://jcenter.bintray.com/com/googlecode/lanterna/lanterna/3.1.1/lanterna-3.1.1-sources.jar",
@@ -1299,7 +1846,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_squareup_okio_okio_jvm_jar_sources_3_2_0",
+              "name": "claro-lang~0.1.409~maven~com_squareup_okio_okio_jvm_jar_sources_3_2_0",
               "sha256": "821d4ea7914bda87cc9076ac4464ecec6e0d15b37ea0e652c7a87a5188ae9124",
               "urls": [
                 "https://jcenter.bintray.com/com/squareup/okio/okio-jvm/3.2.0/okio-jvm-3.2.0-sources.jar",
@@ -1313,7 +1860,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_jetbrains_kotlin_kotlin_stdlib_common_jar_sources_1_6_20",
+              "name": "claro-lang~0.1.409~maven~org_jetbrains_kotlin_kotlin_stdlib_common_jar_sources_1_6_20",
               "sha256": "a9791dcdf2a3316fceb4bfbfb5577926523eeac9d672dfe52981195f6905aaa9",
               "urls": [
                 "https://jcenter.bintray.com/org/jetbrains/kotlin/kotlin-stdlib-common/1.6.20/kotlin-stdlib-common-1.6.20-sources.jar",
@@ -1327,7 +1874,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_protobuf_protobuf_java_util_3_24_3",
+              "name": "claro-lang~0.1.409~maven~com_google_protobuf_protobuf_java_util_3_24_3",
               "sha256": "359e5e0833a49e845080441ce1dba42db80bddbc96bebbb2761a1617a31345f8",
               "urls": [
                 "https://jcenter.bintray.com/com/google/protobuf/protobuf-java-util/3.24.3/protobuf-java-util-3.24.3.jar",
@@ -1341,7 +1888,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_github_vbmacher_java_cup_runtime_jar_sources_11b_20160615_1",
+              "name": "claro-lang~0.1.409~maven~com_github_vbmacher_java_cup_runtime_jar_sources_11b_20160615_1",
               "sha256": "4ad5ebd182a1e520dde053615ee38097c8e2dd7357781c0850b4d951dfd766be",
               "urls": [
                 "https://jcenter.bintray.com/com/github/vbmacher/java-cup-runtime/11b-20160615-1/java-cup-runtime-11b-20160615-1-sources.jar",
@@ -1355,7 +1902,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_auto_value_auto_value_jar_sources_1_5_3",
+              "name": "claro-lang~0.1.409~maven~com_google_auto_value_auto_value_jar_sources_1_5_3",
               "sha256": "7c9adb9f49a4f07e226778951e087da85759a9ab53ac375f9d076de6dc84ca2b",
               "urls": [
                 "https://jcenter.bintray.com/com/google/auto/value/auto-value/1.5.3/auto-value-1.5.3-sources.jar",
@@ -1369,7 +1916,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_apache_ant_ant_launcher_1_10_13",
+              "name": "claro-lang~0.1.409~maven~org_apache_ant_ant_launcher_1_10_13",
               "sha256": "cd7695b3bfb6964ab71b6a0b31dad60005ae77fe502132364679aacf08f77970",
               "urls": [
                 "https://jcenter.bintray.com/org/apache/ant/ant-launcher/1.10.13/ant-launcher-1.10.13.jar",
@@ -1383,7 +1930,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~net_javacrumbs_future_converter_future_converter_guava_common_1_2_0",
+              "name": "claro-lang~0.1.409~maven~net_javacrumbs_future_converter_future_converter_guava_common_1_2_0",
               "sha256": "82bfab706005ea51c3e76958a62564367cf9cae207c0b1d55b9734876b9780c1",
               "urls": [
                 "https://jcenter.bintray.com/net/javacrumbs/future-converter/future-converter-guava-common/1.2.0/future-converter-guava-common-1.2.0.jar",
@@ -1397,7 +1944,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_j2objc_j2objc_annotations_jar_sources_2_8",
+              "name": "claro-lang~0.1.409~maven~com_google_j2objc_j2objc_annotations_jar_sources_2_8",
               "sha256": "7413eed41f111453a08837f5ac680edded7faed466cbd35745e402e13f4cc3f5",
               "urls": [
                 "https://jcenter.bintray.com/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8-sources.jar",
@@ -1411,7 +1958,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_jmxapi_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_jmxapi_5_4_3",
               "sha256": "a87a0460ecd073e356ba072be70e82ee35026dec11718029b3e9fc00954923eb",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-jmxapi/5.4.3/activej-jmxapi-5.4.3.jar",
@@ -1425,7 +1972,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_errorprone_error_prone_annotations_2_21_1",
+              "name": "claro-lang~0.1.409~maven~com_google_errorprone_error_prone_annotations_2_21_1",
               "sha256": "d1f3c66aa91ac52549e00ae3b208ba4b9af7d72d68f230643553beb38e6118ac",
               "urls": [
                 "https://jcenter.bintray.com/com/google/errorprone/error_prone_annotations/2.21.1/error_prone_annotations-2.21.1.jar",
@@ -1439,7 +1986,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_bytebuf_jar_sources_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_bytebuf_jar_sources_5_4_3",
               "sha256": "bc44bd5d885fbe4846542cbd15feab3ecd1da72d222fce1cf92225fced3abfaa",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-bytebuf/5.4.3/activej-bytebuf-5.4.3-sources.jar",
@@ -1453,7 +2000,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_slf4j_slf4j_nop_jar_sources_2_0_7",
+              "name": "claro-lang~0.1.409~maven~org_slf4j_slf4j_nop_jar_sources_2_0_7",
               "sha256": "979ba83193e43196e24ef4fdb4cd454ea566a65ba28962edfdadf66c133cd04b",
               "urls": [
                 "https://jcenter.bintray.com/org/slf4j/slf4j-nop/2.0.7/slf4j-nop-2.0.7-sources.jar",
@@ -1467,7 +2014,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_github_vbmacher_java_cup_11b_20160615",
+              "name": "claro-lang~0.1.409~maven~com_github_vbmacher_java_cup_11b_20160615",
               "sha256": "b6b27727d80f563950b20b3b6b5062ae7ce78a1b61a0f3113f42164ce0b31d5f",
               "urls": [
                 "https://jcenter.bintray.com/com/github/vbmacher/java-cup/11b-20160615/java-cup-11b-20160615.jar",
@@ -1481,7 +2028,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_protobuf_protobuf_java_jar_sources_3_24_3",
+              "name": "claro-lang~0.1.409~maven~com_google_protobuf_protobuf_java_jar_sources_3_24_3",
               "sha256": "7e25aafba28e7ea24a82743004536f12bc93a259a84e4629c438102123d277d3",
               "urls": [
                 "https://jcenter.bintray.com/com/google/protobuf/protobuf-java/3.24.3/protobuf-java-3.24.3-sources.jar",
@@ -1495,7 +2042,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_squareup_okhttp3_okhttp_jar_sources_4_11_0",
+              "name": "claro-lang~0.1.409~maven~com_squareup_okhttp3_okhttp_jar_sources_4_11_0",
               "sha256": "98c2211248eabc4fe4cef43d9ef6f246d692ba83d47dd6b641c3a5ac26c0450a",
               "urls": [
                 "https://jcenter.bintray.com/com/squareup/okhttp3/okhttp/4.11.0/okhttp-4.11.0-sources.jar",
@@ -1509,7 +2056,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~de_jflex_jflex_1_9_1",
+              "name": "claro-lang~0.1.409~maven~de_jflex_jflex_1_9_1",
               "sha256": "2888d90d6a5ee37166a5e339b1616ad3a2604e6cce246e61deaf115487b18350",
               "urls": [
                 "https://jcenter.bintray.com/de/jflex/jflex/1.9.1/jflex-1.9.1.jar",
@@ -1523,7 +2070,7 @@
             "bzlFile": "@@rules_jvm_external~5.3//:coursier.bzl",
             "ruleClassName": "pinned_coursier_fetch",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~maven",
+              "name": "claro-lang~0.1.409~maven~maven",
               "repositories": [
                 "{ \"repo_url\": \"https://jcenter.bintray.com/\" }",
                 "{ \"repo_url\": \"https://maven.google.com\" }",
@@ -1552,7 +2099,7 @@
               "fetch_sources": true,
               "fetch_javadoc": false,
               "generate_compat_repositories": false,
-              "maven_install_json": "@@claro-lang~0.1.368//:rules_jvm_external~5.3~maven~maven_install.json",
+              "maven_install_json": "@@claro-lang~0.1.409//:rules_jvm_external~5.3~maven~maven_install.json",
               "override_targets": {},
               "strict_visibility": false,
               "strict_visibility_value": [
@@ -1573,7 +2120,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_csp_jar_sources_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_csp_jar_sources_5_4_3",
               "sha256": "c4d5f31e3f913bcbd064a9a61eb93e4cdb0d378480aee84feb55bd6b58456458",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-csp/5.4.3/activej-csp-5.4.3-sources.jar",
@@ -1587,7 +2134,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_promise_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_promise_5_4_3",
               "sha256": "30fec36791bcc6b5aad06f2bbc4b109e269865903d7ba396c8ac776cb76ab736",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-promise/5.4.3/activej-promise-5.4.3.jar",
@@ -1601,7 +2148,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_code_gson_gson_2_10_1",
+              "name": "claro-lang~0.1.409~maven~com_google_code_gson_gson_2_10_1",
               "sha256": "4241c14a7727c34feea6507ec801318a3d4a90f070e4525681079fb94ee4c593",
               "urls": [
                 "https://jcenter.bintray.com/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar",
@@ -1615,7 +2162,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_squareup_okhttp3_okhttp_4_11_0",
+              "name": "claro-lang~0.1.409~maven~com_squareup_okhttp3_okhttp_4_11_0",
               "sha256": "ee8f6bd6cd1257013d748330f4ca147638a9fbcb52fb388d5ac93cf53408745d",
               "urls": [
                 "https://jcenter.bintray.com/com/squareup/okhttp3/okhttp/4.11.0/okhttp-4.11.0.jar",
@@ -1629,7 +2176,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_eventloop_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_eventloop_5_4_3",
               "sha256": "97b785712448c11e3638e84f4d3f743ab8a4a50195f46c356583361d41b09a01",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-eventloop/5.4.3/activej-eventloop-5.4.3.jar",
@@ -1643,7 +2190,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_apache_ant_ant_jar_sources_1_10_13",
+              "name": "claro-lang~0.1.409~maven~org_apache_ant_ant_jar_sources_1_10_13",
               "sha256": "0878fd3a4ffd5a862da97eb66b15ebc99451c1e85eadb748dd6050b41dbae41c",
               "urls": [
                 "https://jcenter.bintray.com/org/apache/ant/ant/1.10.13/ant-1.10.13-sources.jar",
@@ -1657,7 +2204,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_protobuf_protobuf_java_util_jar_sources_3_24_3",
+              "name": "claro-lang~0.1.409~maven~com_google_protobuf_protobuf_java_util_jar_sources_3_24_3",
               "sha256": "02c13e41dad9ad97d25fb0744ea4afaec2d420463d65bcc09ba7fbd43e98c389",
               "urls": [
                 "https://jcenter.bintray.com/com/google/protobuf/protobuf-java-util/3.24.3/protobuf-java-util-3.24.3-sources.jar",
@@ -1671,7 +2218,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_jetbrains_kotlin_kotlin_stdlib_jdk8_jar_sources_1_6_20",
+              "name": "claro-lang~0.1.409~maven~org_jetbrains_kotlin_kotlin_stdlib_jdk8_jar_sources_1_6_20",
               "sha256": "09d7e6d71cfc18ad841f557bd1ea67b42928712a5746ce6c28c0123e1d2310d6",
               "urls": [
                 "https://jcenter.bintray.com/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.6.20/kotlin-stdlib-jdk8-1.6.20-sources.jar",
@@ -1685,7 +2232,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_types_jar_sources_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_types_jar_sources_5_4_3",
               "sha256": "991a618595f3324f5a505edd0788aa7938a38e85edb874bee0fe50e2a735c8cb",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-types/5.4.3/activej-types-5.4.3-sources.jar",
@@ -1699,7 +2246,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_jetbrains_kotlin_kotlin_stdlib_jdk8_1_6_20",
+              "name": "claro-lang~0.1.409~maven~org_jetbrains_kotlin_kotlin_stdlib_jdk8_1_6_20",
               "sha256": "fdab1bf120e2b5e7ab6d7888e9ebc024ec6b8ca729361296395dab634b213695",
               "urls": [
                 "https://jcenter.bintray.com/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.6.20/kotlin-stdlib-jdk8-1.6.20.jar",
@@ -1713,7 +2260,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_apache_ant_ant_1_10_13",
+              "name": "claro-lang~0.1.409~maven~org_apache_ant_ant_1_10_13",
               "sha256": "befbfc79e744e9892cfa7db96df3b6e82dc17d2571af42aa427976fc22299838",
               "urls": [
                 "https://jcenter.bintray.com/org/apache/ant/ant/1.10.13/ant-1.10.13.jar",
@@ -1727,7 +2274,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_github_ben_manes_caffeine_caffeine_3_1_8",
+              "name": "claro-lang~0.1.409~maven~com_github_ben_manes_caffeine_caffeine_3_1_8",
               "sha256": "7dd15f9df1be238ffaa367ce6f556737a88031de4294dad18eef57c474ddf1d3",
               "urls": [
                 "https://jcenter.bintray.com/com/github/ben-manes/caffeine/caffeine/3.1.8/caffeine-3.1.8.jar",
@@ -1741,7 +2288,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_csp_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_csp_5_4_3",
               "sha256": "b66a216c3e17cf5ddd08eb49780314a0e5b81cdf30646f6e390bf5129072d008",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-csp/5.4.3/activej-csp-5.4.3.jar",
@@ -1755,7 +2302,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_checkerframework_checker_qual_3_37_0",
+              "name": "claro-lang~0.1.409~maven~org_checkerframework_checker_qual_3_37_0",
               "sha256": "e4ce1376cc2735e1dde220b62ad0913f51297704daad155a33f386bc5db0d9f7",
               "urls": [
                 "https://jcenter.bintray.com/org/checkerframework/checker-qual/3.37.0/checker-qual-3.37.0.jar",
@@ -1769,7 +2316,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_squareup_okio_okio_jvm_3_2_0",
+              "name": "claro-lang~0.1.409~maven~com_squareup_okio_okio_jvm_3_2_0",
               "sha256": "b642baef4c570055de4cb3d1667b2b16dced901ff8066345a063691aa06025a4",
               "urls": [
                 "https://jcenter.bintray.com/com/squareup/okio/okio-jvm/3.2.0/okio-jvm-3.2.0.jar",
@@ -1783,7 +2330,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_github_ben_manes_caffeine_caffeine_jar_sources_3_1_8",
+              "name": "claro-lang~0.1.409~maven~com_github_ben_manes_caffeine_caffeine_jar_sources_3_1_8",
               "sha256": "7c8237f5d8f23654e7091056316a3730636b7a0f2e6fce450e2bd522090d6b7f",
               "urls": [
                 "https://jcenter.bintray.com/com/github/ben-manes/caffeine/caffeine/3.1.8/caffeine-3.1.8-sources.jar",
@@ -1797,7 +2344,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_slf4j_slf4j_nop_2_0_7",
+              "name": "claro-lang~0.1.409~maven~org_slf4j_slf4j_nop_2_0_7",
               "sha256": "5411a0d44e2725182271230b9fb4c2c4062c1b5fa7df2d83e00c0302733db173",
               "urls": [
                 "https://jcenter.bintray.com/org/slf4j/slf4j-nop/2.0.7/slf4j-nop-2.0.7.jar",
@@ -1811,7 +2358,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~net_javacrumbs_future_converter_future_converter_common_jar_sources_1_2_0",
+              "name": "claro-lang~0.1.409~maven~net_javacrumbs_future_converter_future_converter_common_jar_sources_1_2_0",
               "sha256": "24f849eb33ef57a4ea597052f8fa78cbe14076cb36160e7b37a6373d1f162a70",
               "urls": [
                 "https://jcenter.bintray.com/net/javacrumbs/future-converter/future-converter-common/1.2.0/future-converter-common-1.2.0-sources.jar",
@@ -1825,7 +2372,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_jmx_stats_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_jmx_stats_5_4_3",
               "sha256": "292af6d50fb0cff2ea93e6746352bf2364a9450ae11939deecdd3d1178ffa41c",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-jmx-stats/5.4.3/activej-jmx-stats-5.4.3.jar",
@@ -1839,7 +2386,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_github_pcj_google_options_1_0_0",
+              "name": "claro-lang~0.1.409~maven~com_github_pcj_google_options_1_0_0",
               "sha256": "f1f84449b46390a7fa73aac0b5acdec4312d6174146af0db1c92425c7005fdce",
               "urls": [
                 "https://jcenter.bintray.com/com/github/pcj/google-options/1.0.0/google-options-1.0.0.jar",
@@ -1853,7 +2400,7 @@
             "bzlFile": "@@rules_jvm_external~5.3//:coursier.bzl",
             "ruleClassName": "coursier_fetch",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~unpinned_maven",
+              "name": "claro-lang~0.1.409~maven~unpinned_maven",
               "repositories": [
                 "{ \"repo_url\": \"https://jcenter.bintray.com/\" }",
                 "{ \"repo_url\": \"https://maven.google.com\" }",
@@ -1890,7 +2437,7 @@
               "strict_visibility_value": [
                 "@@//visibility:private"
               ],
-              "maven_install_json": "@@claro-lang~0.1.368//:rules_jvm_external~5.3~maven~maven_install.json",
+              "maven_install_json": "@@claro-lang~0.1.409//:rules_jvm_external~5.3~maven~maven_install.json",
               "resolve_timeout": 600,
               "jetify": false,
               "jetify_include_list": [
@@ -1905,7 +2452,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_squareup_okio_okio_jar_sources_3_2_0",
+              "name": "claro-lang~0.1.409~maven~com_squareup_okio_okio_jar_sources_3_2_0",
               "sha256": "7882185a10a68aabd31c328a1d8cf0ccd7127ceaba4152f4c57a476dec45b872",
               "urls": [
                 "https://jcenter.bintray.com/com/squareup/okio/okio/3.2.0/okio-3.2.0-sources.jar",
@@ -1919,7 +2466,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_jetbrains_kotlin_kotlin_stdlib_jdk7_jar_sources_1_6_20",
+              "name": "claro-lang~0.1.409~maven~org_jetbrains_kotlin_kotlin_stdlib_jdk7_jar_sources_1_6_20",
               "sha256": "9f5230a4301dcfe7047dd08f9b38811f76cfed60e6a10957bec7982c288f6c0e",
               "urls": [
                 "https://jcenter.bintray.com/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.6.20/kotlin-stdlib-jdk7-1.6.20-sources.jar",
@@ -1933,7 +2480,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_jmx_stats_jar_sources_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_jmx_stats_jar_sources_5_4_3",
               "sha256": "b33b4bc4ce3201138742ed13fb8468fc376861038fb2045ac879a6e72a109a3c",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-jmx-stats/5.4.3/activej-jmx-stats-5.4.3-sources.jar",
@@ -1947,7 +2494,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~net_javacrumbs_future_converter_future_converter_java8_common_1_2_0",
+              "name": "claro-lang~0.1.409~maven~net_javacrumbs_future_converter_future_converter_java8_common_1_2_0",
               "sha256": "bed25293fabbf59e048f67f88e55140ebc1cfa4fa899e397545d0193e866a65c",
               "urls": [
                 "https://jcenter.bintray.com/net/javacrumbs/future-converter/future-converter-java8-common/1.2.0/future-converter-java8-common-1.2.0.jar",
@@ -1961,7 +2508,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~de_jflex_jflex_jar_sources_1_9_1",
+              "name": "claro-lang~0.1.409~maven~de_jflex_jflex_jar_sources_1_9_1",
               "sha256": "94598f69f962e00d1b40e49ac483f62589805d21c5dc3ddc8b04392bca48c0c5",
               "urls": [
                 "https://jcenter.bintray.com/de/jflex/jflex/1.9.1/jflex-1.9.1-sources.jar",
@@ -1975,7 +2522,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_jetbrains_kotlin_kotlin_stdlib_1_6_20",
+              "name": "claro-lang~0.1.409~maven~org_jetbrains_kotlin_kotlin_stdlib_1_6_20",
               "sha256": "eeb51c2b67b26233fd81d0bc4f8044ec849718890905763ceffd84a31e2cb799",
               "urls": [
                 "https://jcenter.bintray.com/org/jetbrains/kotlin/kotlin-stdlib/1.6.20/kotlin-stdlib-1.6.20.jar",
@@ -1989,7 +2536,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~net_javacrumbs_future_converter_future_converter_guava_common_jar_sources_1_2_0",
+              "name": "claro-lang~0.1.409~maven~net_javacrumbs_future_converter_future_converter_guava_common_jar_sources_1_2_0",
               "sha256": "f5a6c226632ab0c4225962146c8b4dbbfd8db75f1b573c2da29268ac1beecc57",
               "urls": [
                 "https://jcenter.bintray.com/net/javacrumbs/future-converter/future-converter-guava-common/1.2.0/future-converter-guava-common-1.2.0-sources.jar",
@@ -2003,7 +2550,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_bytebuf_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_bytebuf_5_4_3",
               "sha256": "25e9750fb75abd1b61568e00b0dea4e5417eddde982743d90d3c7570362857c7",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-bytebuf/5.4.3/activej-bytebuf-5.4.3.jar",
@@ -2017,7 +2564,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_protobuf_protobuf_java_3_24_3",
+              "name": "claro-lang~0.1.409~maven~com_google_protobuf_protobuf_java_3_24_3",
               "sha256": "9cf913527c3cd7358a89f9b3e886530d1c85ba8accc302265344b2344a36bb20",
               "urls": [
                 "https://jcenter.bintray.com/com/google/protobuf/protobuf-java/3.24.3/protobuf-java-3.24.3.jar",
@@ -2031,7 +2578,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_squareup_okio_okio_3_2_0",
+              "name": "claro-lang~0.1.409~maven~com_squareup_okio_okio_3_2_0",
               "sha256": "dca932cb2029b6c9e26770f87db08b14d481ffe8131a59f369a2385c11be4e2d",
               "urls": [
                 "https://jcenter.bintray.com/com/squareup/okio/okio/3.2.0/okio-3.2.0.jar",
@@ -2045,7 +2592,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_github_vbmacher_java_cup_runtime_11b_20160615_1",
+              "name": "claro-lang~0.1.409~maven~com_github_vbmacher_java_cup_runtime_11b_20160615_1",
               "sha256": "7efa10d1a1d8a77f855be46e14f1011ff716e2a000a34335b57e44eeed68e03b",
               "urls": [
                 "https://jcenter.bintray.com/com/github/vbmacher/java-cup-runtime/11b-20160615-1/java-cup-runtime-11b-20160615-1.jar",
@@ -2059,7 +2606,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_slf4j_slf4j_api_2_0_7",
+              "name": "claro-lang~0.1.409~maven~org_slf4j_slf4j_api_2_0_7",
               "sha256": "5d6298b93a1905c32cda6478808ac14c2d4a47e91535e53c41f7feeb85d946f4",
               "urls": [
                 "https://jcenter.bintray.com/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar",
@@ -2073,7 +2620,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_j2objc_j2objc_annotations_2_8",
+              "name": "claro-lang~0.1.409~maven~com_google_j2objc_j2objc_annotations_2_8",
               "sha256": "f02a95fa1a5e95edb3ed859fd0fb7df709d121a35290eff8b74dce2ab7f4d6ed",
               "urls": [
                 "https://jcenter.bintray.com/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar",
@@ -2087,7 +2634,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_types_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_types_5_4_3",
               "sha256": "79384b7e18fb2ab9f9a27a64302a82642227eb9e23eb424f44f465933f2abc71",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-types/5.4.3/activej-types-5.4.3.jar",
@@ -2101,7 +2648,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava",
+              "name": "claro-lang~0.1.409~maven~com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava",
               "sha256": "b372a037d4230aa57fbeffdef30fd6123f9c0c2db85d0aced00c91b974f33f99",
               "urls": [
                 "https://jcenter.bintray.com/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
@@ -2115,7 +2662,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_errorprone_error_prone_annotations_jar_sources_2_21_1",
+              "name": "claro-lang~0.1.409~maven~com_google_errorprone_error_prone_annotations_jar_sources_2_21_1",
               "sha256": "29012a51bb8d7d7bdd7db882f46dec8cccb36b40f34b6e5de2ec7dd647b372ca",
               "urls": [
                 "https://jcenter.bintray.com/com/google/errorprone/error_prone_annotations/2.21.1/error_prone_annotations-2.21.1-sources.jar",
@@ -2129,7 +2676,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_common_jar_sources_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_common_jar_sources_5_4_3",
               "sha256": "929afd13783e9721d5a1630d6d44f232bf90ff435154919cabd0956372bb9eea",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-common/5.4.3/activej-common-5.4.3-sources.jar",
@@ -2143,7 +2690,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~net_javacrumbs_future_converter_future_converter_java8_common_jar_sources_1_2_0",
+              "name": "claro-lang~0.1.409~maven~net_javacrumbs_future_converter_future_converter_java8_common_jar_sources_1_2_0",
               "sha256": "8a0f6e7ead50cf9687ae7093bdd8e7f20cd26e42b848105206e18b245ebbc107",
               "urls": [
                 "https://jcenter.bintray.com/net/javacrumbs/future-converter/future-converter-java8-common/1.2.0/future-converter-java8-common-1.2.0-sources.jar",
@@ -2157,7 +2704,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_guava_guava_jar_sources_32_1_2_jre",
+              "name": "claro-lang~0.1.409~maven~com_google_guava_guava_jar_sources_32_1_2_jre",
               "sha256": "f80a6cb82625d6e4834f61f131ed51e956541b4e3a029d45d02bc824b722bfcc",
               "urls": [
                 "https://jcenter.bintray.com/com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre-sources.jar",
@@ -2171,7 +2718,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_http_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_http_5_4_3",
               "sha256": "389b44d737c425f5f6eaedf9552ae18c66631332034b13c235c7c0aedc76f991",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-http/5.4.3/activej-http-5.4.3.jar",
@@ -2185,7 +2732,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_checkerframework_checker_qual_jar_sources_3_37_0",
+              "name": "claro-lang~0.1.409~maven~org_checkerframework_checker_qual_jar_sources_3_37_0",
               "sha256": "2ca31c7e959ad82fe270b2baac11a59c570f8778191233c54927e94adab7b640",
               "urls": [
                 "https://jcenter.bintray.com/org/checkerframework/checker-qual/3.37.0/checker-qual-3.37.0-sources.jar",
@@ -2199,7 +2746,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_net_jar_sources_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_net_jar_sources_5_4_3",
               "sha256": "8a8ded352e28833ffba3e97a70f68706a6c6de2f444fd4cc51fe72ff8fd8af75",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-net/5.4.3/activej-net-5.4.3-sources.jar",
@@ -2213,7 +2760,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_squareup_retrofit2_retrofit_jar_sources_2_7_2",
+              "name": "claro-lang~0.1.409~maven~com_squareup_retrofit2_retrofit_jar_sources_2_7_2",
               "sha256": "338329c3df580f2f2c33fb9c90d2044b98b177ec3d8f61da78799744f515abf0",
               "urls": [
                 "https://jcenter.bintray.com/com/squareup/retrofit2/retrofit/2.7.2/retrofit-2.7.2-sources.jar",
@@ -2227,7 +2774,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_http_jar_sources_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_http_jar_sources_5_4_3",
               "sha256": "667a83ada036c0d0eb7e25f451cdd77070cefa17e8ec1fc19342312c447cb128",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-http/5.4.3/activej-http-5.4.3-sources.jar",
@@ -2241,7 +2788,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_code_findbugs_jsr305_3_0_2",
+              "name": "claro-lang~0.1.409~maven~com_google_code_findbugs_jsr305_3_0_2",
               "sha256": "766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7",
               "urls": [
                 "https://jcenter.bintray.com/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar",
@@ -2255,7 +2802,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_jetbrains_annotations_22_0_0",
+              "name": "claro-lang~0.1.409~maven~org_jetbrains_annotations_22_0_0",
               "sha256": "9f45f5d5184d50a777742389a7a6e6a5b0bf90b316919774d8336f94776c31b2",
               "urls": [
                 "https://jcenter.bintray.com/org/jetbrains/annotations/22.0.0/annotations-22.0.0.jar",
@@ -2269,7 +2816,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_googlecode_lanterna_lanterna_3_1_1",
+              "name": "claro-lang~0.1.409~maven~com_googlecode_lanterna_lanterna_3_1_1",
               "sha256": "ef3c42797616e6ff6b8ad9ef9304693ca7604a9b429a44f71c939a3604075264",
               "urls": [
                 "https://jcenter.bintray.com/com/googlecode/lanterna/lanterna/3.1.1/lanterna-3.1.1.jar",
@@ -2283,7 +2830,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~net_javacrumbs_future_converter_future_converter_java8_guava_jar_sources_1_2_0",
+              "name": "claro-lang~0.1.409~maven~net_javacrumbs_future_converter_future_converter_java8_guava_jar_sources_1_2_0",
               "sha256": "3e209e1d6e80d1cde253ac0e28d50588112d0128a9bf05dae7f4aea3a36bdc03",
               "urls": [
                 "https://jcenter.bintray.com/net/javacrumbs/future-converter/future-converter-java8-guava/1.2.0/future-converter-java8-guava-1.2.0-sources.jar",
@@ -2297,7 +2844,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_github_pcj_google_options_jar_sources_1_0_0",
+              "name": "claro-lang~0.1.409~maven~com_github_pcj_google_options_jar_sources_1_0_0",
               "sha256": "3871275e5323aaa132ed043c3c3bf6620f5fe73c8aeb456ce992db9ce5d59768",
               "urls": [
                 "https://jcenter.bintray.com/com/github/pcj/google-options/1.0.0/google-options-1.0.0-sources.jar",
@@ -2311,7 +2858,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~net_javacrumbs_future_converter_future_converter_common_1_2_0",
+              "name": "claro-lang~0.1.409~maven~net_javacrumbs_future_converter_future_converter_common_1_2_0",
               "sha256": "567aeb2907088298fe5e67fd0fb1843571c24b46ef5b369f495c3d52c654b67b",
               "urls": [
                 "https://jcenter.bintray.com/net/javacrumbs/future-converter/future-converter-common/1.2.0/future-converter-common-1.2.0.jar",
@@ -2325,7 +2872,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_jetbrains_annotations_jar_sources_22_0_0",
+              "name": "claro-lang~0.1.409~maven~org_jetbrains_annotations_jar_sources_22_0_0",
               "sha256": "76a42bb367f9dde78bb65e0ddb2800f5db6183f9390983b2268ab452aac5967e",
               "urls": [
                 "https://jcenter.bintray.com/org/jetbrains/annotations/22.0.0/annotations-22.0.0-sources.jar",
@@ -2339,7 +2886,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_guava_failureaccess_jar_sources_1_0_1",
+              "name": "claro-lang~0.1.409~maven~com_google_guava_failureaccess_jar_sources_1_0_1",
               "sha256": "092346eebbb1657b51aa7485a246bf602bb464cc0b0e2e1c7e7201fadce1e98f",
               "urls": [
                 "https://jcenter.bintray.com/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1-sources.jar",
@@ -2353,7 +2900,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_google_code_findbugs_jsr305_jar_sources_3_0_2",
+              "name": "claro-lang~0.1.409~maven~com_google_code_findbugs_jsr305_jar_sources_3_0_2",
               "sha256": "1c9e85e272d0708c6a591dc74828c71603053b48cc75ae83cce56912a2aa063b",
               "urls": [
                 "https://jcenter.bintray.com/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2-sources.jar",
@@ -2367,7 +2914,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~com_squareup_retrofit2_retrofit_2_7_2",
+              "name": "claro-lang~0.1.409~maven~com_squareup_retrofit2_retrofit_2_7_2",
               "sha256": "54b9d05e90fb5ae6777329fabb9b345705b3e2074d3729313d84fae727129f6b",
               "urls": [
                 "https://jcenter.bintray.com/com/squareup/retrofit2/retrofit/2.7.2/retrofit-2.7.2.jar",
@@ -2381,7 +2928,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_slf4j_slf4j_api_jar_sources_2_0_7",
+              "name": "claro-lang~0.1.409~maven~org_slf4j_slf4j_api_jar_sources_2_0_7",
               "sha256": "2d6c1e7bc70fdbce8e5c6ffaaaa6673ec1a05e1cf5b9d7ae3285bf19cc81a8f1",
               "urls": [
                 "https://jcenter.bintray.com/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7-sources.jar",
@@ -2395,7 +2942,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_jmxapi_jar_sources_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_jmxapi_jar_sources_5_4_3",
               "sha256": "11ac3b6b5833d041cf6e00ac92a467fb4df106daa9ea11984d106c6a1d7f4033",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-jmxapi/5.4.3/activej-jmxapi-5.4.3-sources.jar",
@@ -2409,7 +2956,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~io_activej_activej_common_5_4_3",
+              "name": "claro-lang~0.1.409~maven~io_activej_activej_common_5_4_3",
               "sha256": "9e98e4e3d8f408da33aa12e5f3c93ca90ea4083884e8695263f7e81d6931aed0",
               "urls": [
                 "https://jcenter.bintray.com/io/activej/activej-common/5.4.3/activej-common-5.4.3.jar",
@@ -2423,7 +2970,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~maven~org_jetbrains_kotlin_kotlin_stdlib_jar_sources_1_6_20",
+              "name": "claro-lang~0.1.409~maven~org_jetbrains_kotlin_kotlin_stdlib_jar_sources_1_6_20",
               "sha256": "07a8017092bfac0679358f200be35d49b9dc0a6bb42c70076dbbff57ed3d3814",
               "urls": [
                 "https://jcenter.bintray.com/org/jetbrains/kotlin/kotlin-stdlib/1.6.20/kotlin-stdlib-1.6.20-sources.jar",
@@ -2436,9 +2983,9 @@
         }
       }
     },
-    "@@claro-lang~0.1.368//:non_module_deps.bzl%non_module_deps": {
+    "@@claro-lang~0.1.409//:non_module_deps.bzl%non_module_deps": {
       "general": {
-        "bzlTransitiveDigest": "Hv0YAtUI56JdaesN1yPOKwglpPwQpop90xDBWGpcSy4=",
+        "bzlTransitiveDigest": "FVsl+QG1LiM42mfBcrt5K2vDcqRilazC/NaIVzFqJ/c=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {
@@ -2446,7 +2993,7 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "name": "claro-lang~0.1.368~non_module_deps~io_bazel_rules_closure",
+              "name": "claro-lang~0.1.409~non_module_deps~io_bazel_rules_closure",
               "sha256": "9498e57368efb82b985db1ed426a767cbf1ba0398fd7aed632fc3908654e1b1e",
               "strip_prefix": "rules_closure-0.12.0",
               "urls": [
@@ -2458,13 +3005,13 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_archive",
             "attributes": {
-              "name": "claro-lang~0.1.368~non_module_deps~jflex_rules",
+              "name": "claro-lang~0.1.409~non_module_deps~jflex_rules",
               "url": "https://github.com/jflex-de/bazel_rules/archive/v1.8.2.tar.gz",
               "sha256": "bd41584dd1d9d99ef72909b3c1af8ba301a89c1d8fdc59becab5d2db1d006455",
               "strip_prefix": "bazel_rules-1.8.2",
               "patches": [
-                "@@claro-lang~0.1.368//patched_jcup:cup_rule_diff.patch",
-                "@@claro-lang~0.1.368//patched_jcup:jflex_rule_diff.patch"
+                "@@claro-lang~0.1.409//patched_jcup:cup_rule_diff.patch",
+                "@@claro-lang~0.1.409//patched_jcup:jflex_rule_diff.patch"
               ],
               "patch_args": [
                 "-p1"
@@ -2475,9 +3022,9 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "name": "claro-lang~0.1.368~non_module_deps~bootstrapping_claro_compiler_tarfile",
-              "sha256": "d076fa303579eaa1a230619c7bf0e41a6c631d4f45075d2a0d918eeb11f55b4d",
-              "url": "https://github.com/JasonSteving99/claro-lang/releases/download/v0.1.367/claro-cli-install.tar.gz"
+              "name": "claro-lang~0.1.409~non_module_deps~bootstrapping_claro_compiler_tarfile",
+              "sha256": "f1c2911ddd333f96970a23ca4c205afa9f209bc41bd70c4e8386efc6bcda15f3",
+              "url": "https://github.com/JasonSteving99/claro-lang/releases/download/v0.1.408/claro-cli-install.tar.gz"
             }
           }
         }

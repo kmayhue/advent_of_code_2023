@@ -5,8 +5,7 @@ var input_text_lines = strings::split(input_text, "\n");
 
 function get_first_number(input_line: string) -> oneof<int, std::Error<string>> {
 
-    for (elmt in strings::splitChars(input_line)) {
-        
+    for (elmt in strings::split(input_line, "")) {
         var char_int = ints::parseInt(elmt);
         if (char_int instanceof int) {
             return char_int;
@@ -64,14 +63,16 @@ var STRING_TO_NUMBER: {string: string} =  {
     "nine": "9"
 };
 
+var STRING_TO_NUMBER_KEYS= maps::keySet(STRING_TO_NUMBER);
+print(STRING_TO_NUMBER_KEYS);
 print(STRING_TO_NUMBER["one"]);
 print(get_calibration_sum(input_text_lines));
 
-for (key in maps::keySet(STRING_TO_NUMBER)) {
+#for (key in STRING_TO_NUMBER_KEYS) {
 
-    print(key);
+#    print(key);
 
-}
+#}
 
 print(strings::replaceAll("one3one", "one", STRING_TO_NUMBER["one"]));
 

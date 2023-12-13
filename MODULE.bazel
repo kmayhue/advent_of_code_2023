@@ -1,6 +1,6 @@
 module(
-  name = "example-claro-module",
+  name = "advent_of_code_2023_km",
   version = "1.0.0",
 )
 
-bazel_dep(name = "claro-lang", version = "0.1.368")
+bazel_dep(name = "claro-lang", version = "0.1.409")
